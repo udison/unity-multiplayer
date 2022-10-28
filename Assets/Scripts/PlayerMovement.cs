@@ -8,13 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float acceleration = 80.0f;
     [SerializeField] private float maxVelocity = 10.0f;
     [SerializeField] private LayerMask lookMask;
-    [SerializeField] private Camera cam;
     
+    private Camera cam;
     private Vector3 motion = Vector3.zero;
     private Rigidbody rb;
     
     void Awake()
     {
+        cam = Camera.main;
         rb = GetComponent<Rigidbody>();
     }
 
